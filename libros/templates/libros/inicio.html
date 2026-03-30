@@ -1,0 +1,30 @@
+{% extends 'libros/base.html' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+<section style="max-width: 800px; margin: 30px auto; padding: 20px;">
+    <h2>Bienvenidos a la Librería infantil</h2>
+
+    <p>
+        Este sitio reúne una selección de libros álbum ilustrados,
+        pensados para fomentar la imaginación, la lectura y la sensibilidad artística.
+    </p>
+
+    <p>
+        Aquí podrás encontrar títulos de autores como Oliver Jeffers, Peter H. Reynolds
+        y otros libros entrañables como <em>La otra orilla</em>, <em>La vocecita</em>,
+        <em>El león que no sabía escribir</em>, <em>El estofado del lobo</em> y
+        <em>La sorpresa</em>.
+    </p>
+
+    <p>
+        Actualmente hay <strong>{{ total_libros }}</strong> libros registrados en el catálogo.
+    </p>
+
+    <div style="margin-top: 25px;">
+        <a href="{% url 'listar_libros' %}" style="margin-right: 15px;">Ver catálogo</a>
+        <a href="{% url 'crear_libro' %}">Agregar un libro</a>
+    </div>
+</section>
+{% endblock %}

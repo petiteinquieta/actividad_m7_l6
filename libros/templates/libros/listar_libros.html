@@ -1,0 +1,21 @@
+{% extends 'libros/base.html' %}
+
+{% block title %}Lista de libros{% endblock %}
+
+{% block content %}
+<h2>Lista de libros</h2>
+
+<ul>
+    {% for libro in libros %}
+        <li>
+            <strong>{{ libro.titulo }}</strong> - {{ libro.autor }} ({{ libro.anio_publicacion }})
+            <a href="{% url 'editar_libro' libro.id %}">Editar</a>
+            <a href="{% url 'eliminar_libro' libro.id %}">Eliminar</a>
+        </li>
+    {% empty %}
+        <li>No hay libros registrados.</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'crear_libro' %}">Crear nuevo libro</a>
+{% endblock %}

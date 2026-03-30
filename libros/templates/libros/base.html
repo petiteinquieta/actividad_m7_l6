@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Librería{% endblock %}</title>
+</head>
+<body>
+    <h1>Librería infantil</h1>
+
+    <nav>
+        <a href="{% url 'inicio' %}">Inicio</a> |
+        <a href="{% url 'listar_libros' %}">Ver libros</a> |
+        <a href="{% url 'crear_libro' %}">Agregar libro</a>
+    </nav>
+
+    <hr>
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
